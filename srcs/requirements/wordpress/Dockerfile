@@ -1,4 +1,4 @@
-FROM debian:bookworm
+FROM debian:bullseye
 
 #RUN apt update -y && apt upgrade -y
 #
@@ -33,7 +33,7 @@ RUN		apt-get update && apt-get upgrade -y
 RUN		apt-get install -y wget
 RUN		apt-get install -y php php-fpm php-mysql mariadb-client;
 
-COPY	/conf/www.conf /etc/php/8.2/fpm/pool.d/www.conf
+COPY	/conf/www.conf /etc/php/7.4/fpm/pool.d/www.conf
 RUN     mkdir -p /run/php
 RUN     chmod 755 /run/php
 
