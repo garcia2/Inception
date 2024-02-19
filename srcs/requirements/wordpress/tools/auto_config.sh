@@ -7,9 +7,10 @@
 #                    --dbhost=mariadb:3306 --path='/var/www/wordpress';
 #
 #/usr/sbin/php-fpm7.3 -F;
+sleep 5
 
-
-if ! wp core is-installed --allow-root  ; then
+if [ ! -f ./wp-config.php ]
+then
     wp core download --allow-root --force
     
     echo "connexion"
