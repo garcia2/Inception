@@ -11,11 +11,6 @@ services:
     restart: unless-stopped
     expose:
       - "3306"
-    healthcheck:
-      test: ["CMD", "/tmp/healthcheck.sh", "--su-mysql", "--connect"]
-      timeout: 4s
-      retries: 10
-    
 
   wordpress:
     container_name: wordpress
@@ -50,14 +45,14 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /home/nigarcia/data/mysql
+      device: /home/nicolas/data/mysql
       o: bind
 
   mariadb:
     driver: local
     driver_opts:
       type: none
-      device: /home/nigarcia/data/wordpress
+      device: /home/nicolas/data/wordpress
       o: bind
 
 networks:
