@@ -1,0 +1,26 @@
+Faut voir pour cette histoire php-fpm uniquement
+
+. How Docker and docker compose work :
+    - Docker est une plateforme de conteneurisation massivement utilisee en dev. L'interet etant de deployer et executer des application dans des conteneurs legers et portables peu importe l'environement
+    - Le fonctionnement peut etre explique en trois composants :
+        * Dockerfile : Un fichier de conf servant  a construire une image docker
+        * Image Docker : C'est la simulation d'un environnement de logiciel
+        * Conteneur Docker : C'est une instance d'une image docker. In encapsule une application avec toutes ses dépendances, exécutée de manière isolée du reste du système.
+
+    - Docker Compose est un outil permetant de gerer des appli multi-conteneurs.
+        * Il s'utilise via un fichier docker-compose.yml decrivant les different services, reseaux et volumes necessaires ppur une app
+
+
+. The difference between a Docker image used with docker compose and without docker compose :
+    - Une image lancee sans compose sera demaree independement des potentiels autres image, les configurations de volumes/reseaux/dependance devra etre manuellement (c'est chiant)
+    - Avec Docker Compose on peut preconfigurer tous ces trucs dans un seul fichier docker-compose.yml
+
+
+. The benefit of Docker compared to VMs :
+    - C'est plus leger, demare plus facilement.
+        * Ca s'explique par le fait qu'une vm va simuler tout un OS pour une isolation complete
+        * Alors que docker va simuler un environement minimal (isolation partielle) necessaire a l'exec d'une app
+
+
+. The pertinence of the directory structure required for this project (an example is provided in the subject's PDF file) :
+    - Un dossier avec 1 dockerfile pour 1 image

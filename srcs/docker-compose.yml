@@ -1,4 +1,3 @@
-version: ‘3’
 services:
   mariadb:
     container_name: mariadb
@@ -45,14 +44,14 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /home/nicolas/data/mysql
+      device: /home/$USER/data/mysql
       o: bind
 
   mariadb:
     driver: local
     driver_opts:
       type: none
-      device: /home/nicolas/data/wordpress
+      device: /home/$USER/data/wordpress
       o: bind
 
 networks:
